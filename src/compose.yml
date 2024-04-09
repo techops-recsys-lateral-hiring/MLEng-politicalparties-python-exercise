@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./app/Dockerfile
+    ports:
+      - "8501:8501"
+
+  model_inference_endpoint:
+    build:
+      context: .
+      dockerfile: ./model-inference-endpoint/Dockerfile
+    volumes:
+      - ../data:/usr/src/app/data
+    ports:
+      - "8000:8000"
