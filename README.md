@@ -1,8 +1,8 @@
-# Survey Analysis
+# Tweet Prediction
 
-As a data scientist you are required to analyse the political landscape of Europe using the **Chapel Hill Expert Survery** dataset. The dataset provides insights into the positioning of **277 political parties** in Europe based on **55 different attributes**. The dataset can be downloaded [here](https://www.chesdata.eu/2019-chapel-hill-expert-survey) and the [codebook](https://static1.squarespace.com/static/5975c9bfdb29d6a05c65209b/t/5fa04ec05d3c8218b7c91450/1604341440585/2019_CHES_codebook.pdf) provides further information on the survey attributes.
+The election is coming! We want to build an application that can parse a Tweet and determine which political party to associate with the Tweet, Republican or Democrat. As a consulting machine learning engineer you are tasked with taking the initial efforts of building the application and making it functional.  
 
-This repository contains the necessary setup and code base to help guide you in performing an analysis using different statistical methods.
+This repository contains the necessary setup and code base to help guide you in creating this application.
 
 # Project Setup
 
@@ -29,6 +29,8 @@ For example, unit tests can be executed using,
 make test
 ```
 
+**Note: this command should execute with failed unit tests**
+
 # Gearing Up for the Pairing Session
 
 Please be sure to complete the below tasks before the pairing session.
@@ -37,4 +39,4 @@ Please be sure to complete the below tasks before the pairing session.
 2. Have your coding environment ready by installing python and dependencies.
 3. Ensure that you are able to run all commands mentioned in this README (except for pytest errors)
 
-**Please note that you DO NOT have to complete the code/tasks inside the `src/` folder. It is meant to be done together during pairing session.**
+**Please note that you DO NOT have to complete the code/tasks inside the `src/` folder. It is meant to be done together during a pairing session.**
