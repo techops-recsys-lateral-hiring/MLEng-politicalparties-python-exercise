@@ -12,20 +12,62 @@ readme = "README.md"
 requires-python = ">= 3.10"
 dependencies = []
 
-[tool.rye]
-virtual = true
-managed = true
-dev-dependencies = ["pytest>=8.2.2", "pytest-mock>=3.14.0"]
+[tool.uv]
+dev-dependencies = [
+    "pre-commit>=3.7.1",
+    "pyright>=1.1.372",
+    "pytest>=8.2.2",
+    "pytest-xdist>=3.6.1",
+    "ruff>=0.5.2",
+]
 
-[tool.rye.workspace]
-members = ["src/app", "src/model_inference_endpoint", "src/text_loader"]
+[tool.ruff]
+target-version = "py313"
+line-length = 90
+fix = true
+exclude = [
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".pytest_cache",
+    ".venv",
+    "venv",
+    "build",
+    "dist",
+]
 
-[tool.hatch.metadata]
-allow-direct-references = true
+[tool.ruff.lint]
+fixable = ["ALL"]
+unfixable = ["E731"]
+select = [
+    "A",
+    "B",
+    "C",
+    "E",
+    "F",
+    "I",
+    "UP",
+    "PL",
+    "PTH",
+    "PGH",
+    "ERA",
+    "RUF",
+    "TRY",
+    "S",
+]
+# maturity path:
+# "E", "F", "W", "UP", "I", "NPY", "A", "PTH", "PLR", "PGH", "RUF", "ARG", "RET", "PD", "N", "PLC", "PT", "INP", "TRY", "SIM", "TD", "PLW", "BLE", "B", "DTZ", "G", "PGH", "Q", "ERA", "EM", "FLY", "PT", "ISC", "SLF"
+ignore = ["PLR2004", "E501", "COM812"]
 
-[tool.hatch.build.targets.wheel]
-packages = ["src/mle_interview"]
+[tool.ruff.lint.mccabe]
+max-complexity = 8
 
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+[tool.ruff.lint.flake8-quotes]
+inline-quotes = "double"
+multiline-quotes = "double"
+
+[tool.pyright]
+pythonVersion = "3.13"
+venvPath = "."
+venv = ".venv"
+typeCheckingMode = "strict"
