@@ -1,8 +1,8 @@
 import pandas as pd
 import string
-import re
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import LabelEncoder
+
 
 class DataLoader:
     def __init__(self, filepath="data/Tweets.csv"):

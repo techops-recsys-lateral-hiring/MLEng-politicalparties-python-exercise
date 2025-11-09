@@ -1,0 +1,29 @@
+[project]
+name = "model-inference-endpoint"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Business-Wizard", email = "49175856+Business-Wizard@users.noreply.github.com" },
+]
+dependencies = [
+    "fastapi>=0.112.0",
+    "pydantic>=2.8.2",
+    "mlflow>=2.15.0",
+    "uvicorn>=0.30.5",
+    "xgboost>=2.1.1",
+]
+requires-python = ">= 3.10"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["model_inference_endpoint"]

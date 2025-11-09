@@ -1,0 +1,23 @@
+[project]
+name = "app"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Business-Wizard", email = "49175856+Business-Wizard@users.noreply.github.com" },
+]
+dependencies = ["requests>=2.32.3", "streamlit>=1.37.0"]
+requires-python = ">= 3.10"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/app"]

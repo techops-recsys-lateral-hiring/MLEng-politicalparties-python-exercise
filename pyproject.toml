@@ -1,0 +1,73 @@
+[project]
+name = "mle-interview"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Shraddha Surana", email = "ssurana@thoughtworks.com" },
+    { name = "twmeissane", email = "no-reply@thoughtworks.com" },
+    { name = "sahgerlad", email = "no-reply@thoughtworks.com" },
+    { name = "Joseph Wilson", email = "joseph.wilson@thoughtworks.com" },
+]
+readme = "README.md"
+requires-python = ">= 3.10"
+dependencies = []
+
+[tool.uv]
+dev-dependencies = [
+    "pre-commit>=3.7.1",
+    "pyright>=1.1.372",
+    "pytest>=8.2.2",
+    "pytest-xdist>=3.6.1",
+    "ruff>=0.5.2",
+]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 90
+fix = true
+exclude = [
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".pytest_cache",
+    ".venv",
+    "venv",
+    "build",
+    "dist",
+]
+
+[tool.ruff.lint]
+fixable = ["ALL"]
+unfixable = ["E731"]
+select = [
+    "A",
+    "B",
+    "C",
+    "E",
+    "F",
+    "I",
+    "UP",
+    "PL",
+    "PTH",
+    "PGH",
+    "ERA",
+    "RUF",
+    "TRY",
+    "S",
+]
+# maturity path:
+# "E", "F", "W", "UP", "I", "NPY", "A", "PTH", "PLR", "PGH", "RUF", "ARG", "RET", "PD", "N", "PLC", "PT", "INP", "TRY", "SIM", "TD", "PLW", "BLE", "B", "DTZ", "G", "PGH", "Q", "ERA", "EM", "FLY", "PT", "ISC", "SLF"
+ignore = ["PLR2004", "E501", "COM812"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 8
+
+[tool.ruff.lint.flake8-quotes]
+inline-quotes = "double"
+multiline-quotes = "double"
+
+[tool.pyright]
+pythonVersion = "3.13"
+venvPath = "."
+venv = ".venv"
+typeCheckingMode = "strict"

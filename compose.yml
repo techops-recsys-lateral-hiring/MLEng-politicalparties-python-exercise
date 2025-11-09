@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+      context: "./src/"
+      dockerfile: ./app.containerfile
+    ports:
+      - "8501:8501"
+
+  model_inference_endpoint:
+    build:
+      context: "./src/"
+      dockerfile: ./inference.containerfile
+    volumes:
+      - ../data:/app/data
+    ports:
+      - "8000:8000"
